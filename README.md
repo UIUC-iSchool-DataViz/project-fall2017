@@ -77,9 +77,77 @@ to communicate.
 This should be uploaded to mediaspace.illinois.edu and any source code placed
 in this repository.
 
-## Component 3: TBA
+## Component 3: UFO database and supplemental data
 
-## Component 4: TBA
+For this component, you are to build an interactive visualization of the UFO
+sighting database we have been working with.
+
+As a reminder, you can load this data with:
+
+```
+#!python
+names = ["date", "city", "state", "country", "shape", "duration_seconds",
+         "duration_reported", "description", "report_date", "latitude",
+         "longitude"]
+
+fn = "/srv/nbgrader/data/ufo-scrubbed-geocoded-time-standardized.csv",
+ufo = pd.read_csv(fn, names = names, parse_dates = ["date", "report_date"])
+```
+
+Your visualization should be interactive; you may find it easiest to
+use [bqplot](http://bqplot.readthedocs.org/) to build this visualization.  It
+should display the following pieces of information:
+
+ * A map of the United States, where the states are colored either by the total
+   sightings in each state over the selected time period, or the total time in
+   sightings.
+ * A plot displaying the total number of sightings in whichever state is
+   highlighted, aggregated so that it is a function of the *year*.
+ * A plot displaying the total duration of sightings in whichever state is
+   highlighted, aggregated so that it is a function of the *year*.
+ * Tooltips should appear when hovering over the state with useful information
+   about the state (either from the UFO database or elsewhere.)
+
+Your interactive visualization must have the following modifiable parts:
+
+ * Which field is being displayed: total sightings or total time.
+ * Time period being visualized: there should be some widget or display
+   mechanism that can be subselected; one possibility would be to show the
+   total number of sightings over the entire database (aggregated by year) and
+   allow the user to click and drag to highlight specific times regions.  When
+   it is subselected, this should change the display in the map component.
+
+The final component of this visualization will be to normalize based on some
+other piece of information about the state.  For instance, this could be taking
+the number of sightings and dividing it by the (modern-day, or per-year) population
+of each state.  There are *many* different fields that these could be
+normalized based on; allowing for interactivity in choosing which normalizing
+field would be useful.
+
+Data about the states can be found at many different places online, and items
+from QuickFacts can be found at:
+
+https://data.world/aaronhoffman/census-gov-state-quickfacts
+
+Note that this may require using an abbreviation terminology known as FIPS, for
+Federal Information Processing Standards.  In `part3/starter_code.py` you can
+see how to obtain the FIPS number for each state, as well as one way of
+plotting data in `bqplot` based on FIPS-keyed information.
+
+## Component 4: Infographic 
+
+Concept: From the visualization you constructed in either component 1 or
+component 3, construct a narrative. You should take the visual output, possibly
+modifying it (potentially with something like photoshop or gimp) to fit the
+style of the rest of your text.
+
+Your output should be in the form of an "infographic." This should include the
+visualization, narrative text, and should be designed to convey a story of your
+own choosing.
+
+This component will be graded on style of presentation, aesthetics,
+representation of the data, and breakdown of the information for understanding
+by lay people.
 
 ## Final Writeup
 
