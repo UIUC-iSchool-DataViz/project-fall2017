@@ -11,6 +11,7 @@ ufo = pd.read_csv(fn, names = names, parse_dates = ["date", "report_date"])
 
 abbr_to_fits = us.states.mapping('abbr', 'fips')
 ufo["fips"] = ufo["state"].apply(lambda a: int(abbr_to_fits.get(str(a).upper(), -1)))
+fips_count = ufo.groupby("fips")["duration_seconds"].count()
 
 map_styles = {'scales': {'projection': bqplot.AlbersUSA(),
                          'color': bqplot.ColorScale(colors=["red", "blue"])},
