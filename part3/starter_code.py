@@ -6,7 +6,7 @@ names = ["date", "city", "state", "country", "shape", "duration_seconds",
          "duration_reported", "description", "report_date", "latitude",
          "longitude"]
 
-fn = "/srv/nbgrader/data/ufo-scrubbed-geocoded-time-standardized.csv",
+fn = "/srv/nbgrader/data/ufo-scrubbed-geocoded-time-standardized.csv"
 ufo = pd.read_csv(fn, names = names, parse_dates = ["date", "report_date"])
 
 abbr_to_fits = us.states.mapping('abbr', 'fips')
