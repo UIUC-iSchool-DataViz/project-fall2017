@@ -1,4 +1,5 @@
 import pandas as pd
+import bqplot
 import us
 
 names = ["date", "city", "state", "country", "shape", "duration_seconds",
