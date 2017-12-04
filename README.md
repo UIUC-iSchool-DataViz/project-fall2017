@@ -52,8 +52,9 @@ Display the locations of each detector in the transportable array on a map of
 the United States; the color of each mark should represent the value of the
 wave at the currently selected time.
 
-The waveform of each selected detector (selected by hovering, selecting from a
-dropdown, or by clicking on a detector) should be displayed as a line plot.
+The waveform of each selected detector (selected by hovering, selecting from an
+int slider, dropdown, or by clicking on a detector) should be displayed as a
+line plot.
 
 Annotate the spectrogram to indicate current time and selected detector.
 
