@@ -164,3 +164,7 @@ These should describe in some detail:
  * What you wished you had been able to do (if anything)
  * Who in the group contributed each part of the visualization (from code, data
    management, data cleaning, writeup, and so on.)
+
+## Submission
+
+To submit your project, send a zip or tarball of your GitHub repository to my email.
